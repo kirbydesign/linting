@@ -1,0 +1,33 @@
+{
+  "name": "@kirbydesign/linting",
+  "version": "0.1.0",
+  "description": "Linting rules, used by kirbydesign, but available for anyone to use",
+  "scripts": {
+    "build": "npm run lint && npm run build:src && npm run build:copy-config && npm run build:copy-package.json",
+    "build:src": "tsc",
+    "build:copy-config": "cp configurations/* ./dist",
+    "build:copy-package.json": "cp package.json ./dist",
+    "clean": "rm -rf ./dist",
+    "lint": "tslint src/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirbydesign/linting.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kirbydesign/linting/issues"
+  },
+  "homepage": "https://github.com/kirbydesign/linting#readme",
+  "dependencies": {
+    "tslint": "~5.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "~8.9.4",
+    "prettier": "^1.15.3",
+    "tslint": "~5.9.1",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "~3.1.1"
+  }
+}
