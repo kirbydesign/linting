@@ -73,7 +73,7 @@ Using the Stylelint rules is a simple matter of adding the package (along with s
 npm install stylelint @kirbydesign/linting --save-dev
 ```
 
-...and then adjusting the TSLint configuration (found in `tslint.json`):
+...and then adjusting the TSLint configuration (found in `.stylelintrc`):
 
 ```json
 {
