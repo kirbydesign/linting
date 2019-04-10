@@ -1,15 +1,19 @@
 {
   "name": "@kirbydesign/linting",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Linting rules, used by kirbydesign, but available for anyone to use",
+  "keywords": ["stylelint-plugin"],
   "scripts": {
-    "build": "npm run build:tslint",
-    "build:tslint": "npm run lint:ts && npm run build:tslint:src && npm run build:tslint:copy-config && npm run build:tslint:copy-package.json",
-    "build:tslint:src": "tsc",
+    "build": "npm run build:tslint && npm run build:stylelint",
+    "build:tslint": "npm run lint:tslint && npm run build:tslint:src && npm run build:tslint:copy-config && npm run build:tslint:copy-package.json",
+    "build:tslint:src": "tsc --project ./tsconfig.tslint.json",
     "build:tslint:copy-config": "cp configurations/* ./dist",
     "build:tslint:copy-package.json": "cp package.json ./dist",
+    "build:stylelint": "npm run lint:stylelint && npm run build:stylelint:src",
+    "build:stylelint:src": "tsc --project ./tsconfig.stylelint.json",
     "clean": "rm -rf ./dist",
-    "lint:ts": "tslint src/**/*.ts"
+    "lint:tslint": "tslint src/tslint/*.ts",
+    "lint:stylelint": "tslint src/stylelint/*.ts"
   },
   "repository": {
     "type": "git",

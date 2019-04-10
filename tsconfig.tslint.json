@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "sourceRoot": "./src/tslint",
+    "inlineSourceMap": true,
+    "outDir": "./dist/rules",
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  },
+}

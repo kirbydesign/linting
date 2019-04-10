@@ -27,8 +27,11 @@ Use them in your terminal like: `npm run <script>`:
 | `build:tslint:src` | Compiles the `.ts`-files, making up the source for the **TSLint** linting rules. |
 | `build:tslint:copy-config` | Copies the configuration files, for using the **TSLint** linting rules, to the distribution (`dist`)-folder. |
 | `build:tslint:copy-package.json` | Copies the `package.json`-file to the distribution (`dist`)-folder. |
+| `build:stylelint` | Builds an entire distribution of the **TSLint** linting rules. |
+| `build:stylelint:src` | Compiles the `.ts`-files, making up the source for the **Stylelint** linting rules. |
 | `clean` | Clears the contents of the distribution (`dist`)-folder. |
-| `lint` | Lints the source code. |
+| `lint:tslint` | Lints the source code of the **TSLint** linting rules. |
+| `lint:stylelint` | Lints the source code of the **Stylelint** linting rules. |
 
 *Please note: All of the scripts are listed in the `package.json` file in the `"scripts"` section.*
 
@@ -37,7 +40,7 @@ Use them in your terminal like: `npm run <script>`:
 Using the TSLint rules is a simple matter of adding the package (along with tslint):
 
 ```bash
-npm install -g tslint shared-tslint-rules
+npm install tslint @kirbydesign/linting --save-dev
 ```
 
 ...and then adjusting the TSLint configuration (found in `tslint.json`):
@@ -64,4 +67,30 @@ This repository / package provides the following list of rules:
 
 ## Stylelint
 
+Using the Stylelint rules is a simple matter of adding the package (along with stylelint):
+
+```bash
+npm install stylelint @kirbydesign/linting --save-dev
+```
+
+...and then adjusting the TSLint configuration (found in `tslint.json`):
+
+```json
+{
+  "plugins": [
+    "@kirbydesign/linting",
+  ],
+  "rules": {
+    ...
+  }
+}
+```
+ 
+
 ### List of Stylelint rules
+
+This repository / package provides the following list of rules:
+
+| Rule name | Description |
+|-----------|-------------|
+| ` ` |  |
