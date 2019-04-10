@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "description": "Linting rules, used by kirbydesign, but available for anyone to use",
   "scripts": {
-    "build": "npm run lint && npm run build:src && npm run build:copy-config && npm run build:copy-package.json",
-    "build:src": "tsc",
-    "build:copy-config": "cp configurations/* ./dist",
-    "build:copy-package.json": "cp package.json ./dist",
+    "build": "npm run build:tslint",
+    "build:tslint": "npm run lint:ts && npm run build:tslint:src && npm run build:tslint:copy-config && npm run build:tslint:copy-package.json",
+    "build:tslint:src": "tsc",
+    "build:tslint:copy-config": "cp configurations/* ./dist",
+    "build:tslint:copy-package.json": "cp package.json ./dist",
     "clean": "rm -rf ./dist",
-    "lint": "tslint src/**/*.ts"
+    "lint:ts": "tslint src/**/*.ts"
   },
   "repository": {
     "type": "git",
